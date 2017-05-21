@@ -15,6 +15,8 @@
 
 ### 演示：
 
+(第一张GIF图有点大，请耐心等待)
+
 ![demoGif1](http://ooqymz3vm.bkt.clouddn.com/demo1.gif)
 
 ![demoGif2](http://ooqymz3vm.bkt.clouddn.com/demo2.gif)
