@@ -7,7 +7,7 @@
 
   <view class="content" wx:for="{{orderList}}" wx:if="{{nowtab=='全部订单' || item.status==nowtab}}">
     <view class="topContent flex-row v-center">
-      <view class="goodsImg"><image src="http://oi7z3yb8a.bkt.clouddn.com/tutou.jpg" class="full-img" mode="aspectFit"></image></view>
+      <view class="goodsImg"><image src="http://ooqymz3vm.bkt.clouddn.com/mltt.jpg" class="full-img" mode="aspectFit"></image></view>
       <view class="rightContent">
         <view>{{item.goodsName}}</view>
         <view>{{item.goodsNum}}件</view>
