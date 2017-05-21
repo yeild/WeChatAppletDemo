@@ -2,20 +2,21 @@
 Page({
   data:{
     orderList:[
-      {goodsName: '[200g]冷吃兔三件套',
+      {
+       goodsName: '[180g]麻辣兔头',
        goodsNum: 1,
        status: '待付款',
-       total: 98,
-      },
-      {goodsName: '[200g]冷吃兔',
+       total: '19.80',
+      },{
+       goodsName: '[180g]麻辣兔头',
        goodsNum: 1,
        status: '待收货',
        logistics: '顺水快递',
-      },
-      {goodsName: '[200g]冷吃牛肉',
+      },{
+       goodsName: '[180g]麻辣兔头',
        goodsNum: 2,
        status: '待付款',
-       total: 48,
+       total: '39.60',
       }
     ],
     nowtab: '全部订单'
