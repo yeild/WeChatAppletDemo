@@ -1,0 +1,22 @@
+<view class="container flex-col v-center h-center" wx-if="{{!hasCoupon}}">
+  <view class="noCoupon flex-col v-center h-center">
+    <view class="icon"><icon type="search" color="white" size="50"></icon></view>
+    <text class="margin">您当前暂无可使用的优惠券</text>
+    <view class="btn" bindtap="toIndex">去首页领券</view>
+  </view>
+</view>
+
+<view class="container flex-col v-center">
+  <view class="card flex-row" wx:for="{{coupons}}">
+    <view class="leftContent flex-row v-center h-center">
+      <block wx:if="{{item.Type=='discount'}}"><text class="margin-right">{{item.Num}}</text><text>折</text></block>
+      <block wx:if="{{item.Type=='cash'}}"><text class="margin-right">￥</text><text>{{item.Num}}</text></block>
+    </view>
+    <view class="rightContent flex-row v-center">
+      <text class="couponType margin-right" wx:if="{{item.Type=='cash'}}">现金券</text>
+      <text class="couponType margin-right" wx:if="{{item.Type=='discount'}}">折扣券</text>
+      <text>全品类（无限制）</text>
+      <text>使用期限：永久</text>
+    </view>
+  </view>
+</view>

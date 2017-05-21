@@ -1,0 +1,42 @@
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: #efeff4;
+}
+.header{
+  border-top: 1px solid #E3E3E3;
+  background: white;
+}
+.tab{
+  padding: 20rpx 0;
+  width: 250rpx;
+  text-align: center;
+  border-bottom: 2px solid #dedede;   
+}
+.tabActive{
+  border-bottom: 2px solid #e4393c;   
+  color: #e4393c;
+}
+.content{
+  background: white;  
+    margin-bottom: 20rpx;
+}
+.topContent{
+  padding: 30rpx 20rpx;  
+}
+.btn{
+  margin: 0;
+  height: 60rpx;  
+}
+.goodsImg{
+  width: 200rpx;
+  height: 200rpx;  
+  margin-right: 20rpx;
+}
+.rightContent{
+  width: 450rpx;  
+}
+.bottomContent{
+  border-top: 1px solid #E3E3E3;    
+  padding: 20rpx;  
+}

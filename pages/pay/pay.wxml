@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="addr flex-row h-center v-center" wx-if="{{showInfo}}" bindtap="toAddr">
+    <icon type="info" class="infoIcon"></icon>
+    <view>请填写收货地址</view>
+  </view>
+
+  <view class="addr flex-row h-center v-center" wx-if="{{hasAddr}}">
+    <picker range="{{addrList}}" range-key="address" bindchange="selectAddr" wx:if="{{addrList}}">
+      <view class="flex-row v-center">
+        <text class="fs-12">
+          {{addrList[addrIndex].address}}
+        </text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="flex-row padding border-top">
+    <image src="{{goods.Img}}" class="foodImg"></image>
+    <view class="padding-left flex-col h-center">
+      <view>{{goods.Name}}</view>
+      <view>规格:{{goods.Type}}</view>
+      <text class="color-red">￥{{goods.Price}}</text>
+    </view>
+  </view>
+
+  <view class="flex-row space-between list v-center">
+    <text>购买数量</text> 
+    <view class="numPicker flex-row">
+      <view class="numBtn subBtn" bindtap="sub">-</view>
+      <view><input type="number" disabled value="{{goodsNum}}" class="numInput"/></view>
+      <view class=" numBtn addBtn" bindtap="add">+</view>
+    </view>
+  </view>
+
+  <view class="flex-row space-between list">
+    <text>优惠券</text>
+    <text wx:if="{{!coupons}}">无</text>
+    <picker bindchange="useCounpon" range="{{coupons}}" range-key="text" wx:if="{{coupons}}">
+        <text wx:if="{{!couponIndex}}">请选择</text>
+        <text wx:if="{{couponIndex}}">
+          {{coupons[couponIndex].text}}
+        </text>
+    </picker>
+  </view>
+
+  <view class="list">
+    <view class="flex-row space-between ">
+      <text>商品金额</text>
+      <text class="color-red">￥{{subtotal}}</text>
+    </view>
+  <view class="flex-row space-between ">
+      <text>运费</text>
+      <text class="color-red">+￥{{freightText}}</text>
+    </view>
+  <view class="flex-row space-between ">
+      <text>优惠券</text>
+      <text class="color-red">-￥{{couponText}}</text>
+    </view>
+  </view>
+
+  <view class="flex-row flex-end list">
+    实付金额： <text class="color-red">￥{{total}}</text>
+  </view>
+
+  <button type="primary" class="payBtn">微信支付</button>
+</view>

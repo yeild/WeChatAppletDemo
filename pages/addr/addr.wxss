@@ -1,0 +1,18 @@
+.list{
+  width: 100%;  
+  padding: 15rpx 10rpx;
+  border-bottom: 1px solid #f3f3f3;  
+}
+.rightContent{
+  width: 560rpx;
+  margin-left: auto  
+}
+input{
+  width: 400rpx;  
+}
+.padding{
+  padding:40rpx 20rpx;
+}
+.checkBox{
+  padding-right: 20rpx;
+}

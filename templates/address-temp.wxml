@@ -1,0 +1,30 @@
+<template name="addressPicker">
+
+  <view class="list flex-row v-center">
+    <text>省</text>
+    <view class="rightContent">
+      <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{province}}">
+        <text class="placeholder">{{province[provinceIndex]}}</text>
+      </picker>
+    </view>
+  </view>
+
+  <view class="list flex-row v-center">
+    <text>市</text>
+    <view class="rightContent">
+      <picker bindchange="bindCityChange" value="{{cityIndex}}" range="{{city}}">
+        <text class="placeholder">{{city[cityIndex]}}</text>
+      </picker>
+    </view>
+  </view>
+
+  <view class="list flex-row v-center">
+    <text>区</text>
+    <view class="rightContent">
+      <picker bindchange="bindDistrictChange" value="{{districtIndex}}" range="{{district}}">
+        <text class="placeholder">{{district[districtIndex]}}</text>
+      </picker>
+    </view>
+  </view>
+
+</template>

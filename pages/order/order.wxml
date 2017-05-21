@@ -1,0 +1,36 @@
+<view class="header flex-col h-center v-center">
+  <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <view class="level fs-16">辣椒学徒</view>
+  <view class="level exp fs-16">0/100</view>
+  <text class="nickname">{{userInfo.nickName}}</text>
+</view>
+
+<view class="content flex-row" bindtap="toOrderList" data-totab="全部订单">
+  <image src="../../img/order.png" class="sm-img"></image>
+  <text>全部订单</text>
+  <image src="../../img/right.png" class="sm-img pull-right"></image>
+</view>
+
+<view class="content flex-row" bindtap="toOrderList" data-totab="待付款">
+  <image src="../../img/paying.png" class="sm-img"></image>
+  <text>待付款</text>
+  <image src="../../img/right.png" class="sm-img pull-right"></image>
+</view>
+
+<view class="content flex-row" bindtap="toOrderList" data-totab="待收货">
+  <image src="../../img/car.png" class="sm-img"></image>
+  <text>待收货</text>
+  <image src="../../img/right.png" class="sm-img pull-right"></image>
+</view>
+
+<view class="content flex-row" bindtap="toAddr">
+  <image src="../../img/addr.png" class="sm-img"></image>
+  <text>收货地址</text>
+  <image src="../../img/right.png" class="sm-img pull-right"></image>
+</view>
+
+<view class="content flex-row" bindtap="toCoupon">
+  <image src="../../img/coupon.png" class="sm-img"></image>
+  <text>优惠券</text>
+  <image src="../../img/right.png" class="sm-img pull-right"></image>
+</view>

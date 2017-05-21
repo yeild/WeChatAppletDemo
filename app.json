@@ -1,0 +1,33 @@
+{
+  "pages":[  
+          
+    "pages/index/index",
+    "pages/order/order",   
+    "pages/orderList/orderList",
+"pages/addr/addr",   
+    "pages/addrList/addrList",
+    "pages/coupon/coupon",
+    "pages/detail/detail",
+    "pages/pay/pay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "辣椒忍者",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "商品",
+      "iconPath": "img/goods.png",
+      "selectedIconPath": "img/goods_active.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "img/order.png",
+      "selectedIconPath": "img/order_active.png"
+    }]
+  }
+}

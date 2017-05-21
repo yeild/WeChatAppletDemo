@@ -1,0 +1,52 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="topLine"></view>
+<swiper indicator-dots class="header">
+  <block wx:for="{{goods.Pictures}}">
+    <swiper-item>
+      <image src="{{item}}" class="full-img" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="content flex-row">
+  <view class="flex-col">
+    <text>{{goods.Name}}</text>
+    <text class="color-red margin">￥{{goods.TypeList[typeIndex].PromotionPrice}}</text>
+    <text class="color-red fs-16 line-through margin">￥{{goods.TypeList[typeIndex].Price}}</text>
+    <text class="color-gray fs-16 margin">月销{{goods.SalesNum}}件</text>
+  </view>
+</view>
+
+<view class="content flex-row">
+  <text>已选</text>
+  <view class="rightContent pull-right">{{goods.Name + ' '+ goods.TypeList[typeIndex].Type + '，'  + goodsNum + '件'}}</view>
+</view>
+
+<view class="content flex-row v-center">
+  <text>规格</text>
+  <view class="rightContent pull-right flex-row">
+    <block wx:for="{{goods.TypeList}}">
+      <text class="label {{index==typeIndex ? 'labelAcctive':''}}" data-id="{{index}}" bindtap="checkType">{{item.Type}}</text>
+    </block>
+  </view>
+</view>
+
+<view class="content flex-row v-center">
+  <text>数量</text>
+  <view class="rightContent pull-right flex-row">
+    <view class="numPicker flex-row">
+      <view class="numBtn subBtn" bindtap="sub">-</view>
+      <view>
+        <input type="number" disabled value="{{goodsNum}}" class="numInput" />
+      </view>
+      <view class=" numBtn addBtn" bindtap="add">+</view>
+    </view>
+  </view>
+</view>
+
+<view class="detial">
+  <view>产品详情</view>
+<template is="wxParse" data="{{wxParseData:intro.nodes}}"/>
+</view>
+
+<button class="btn" type="warn" bindtap="toPay">立即购买</button>

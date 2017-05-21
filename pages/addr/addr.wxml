@@ -1,0 +1,34 @@
+<import src="../../templates/address-temp"/>
+<view class="list flex-row v-center">
+  <text>收货人</text>
+  <view class="rightContent">
+    <input placeholder="姓名" bindblur="setName"/>
+  </view> 
+</view>
+
+<view class="list flex-row v-center">
+  <text>联系方式</text>
+  <view class="rightContent">
+    <input type="number" placeholder="手机号码" bindblur="setTel"/>
+  </view> 
+</view>
+
+<template is="addressPicker" 
+    data="{{provinceIndex:city.provinceIndex,cityIndex:city.cityIndex,districtIndex:city.districtIndex,province:city.province,city:city.city[city.selectedProvince],district:city.district[city.selectedCity]}}"/>
+
+
+<view class="list flex-row v-center">
+  <text>详细地址</text>
+  <view class="rightContent">
+    <input placeholder="详细地址" bindblur="setDetail"/>
+  </view> 
+</view>
+
+<view class="list flex-row v-center space-between">
+  <text>设为默认地址</text>
+  <checkbox  color="#e4393c" class="checkBox" bindtap="setDefalut"/>
+</view>
+
+<view class="padding">
+  <button type="warn" bindtap="addAddr">确认</button>
+</view>

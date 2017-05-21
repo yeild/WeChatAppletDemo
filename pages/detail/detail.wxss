@@ -1,0 +1,30 @@
+
+.header{
+  width: 100%;
+  height: 500rpx;
+}
+.content{
+  padding: 20rpx;
+  border-bottom: 10rpx solid #f3f3f3;
+}
+.rightContent{
+  width: 620rpx;
+}
+.label{
+  margin-right: 40rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 5px;
+  background: #f3f3f3;
+}
+.labelAcctive{
+  background: #e4393c;
+  color: white;
+}
+.detial{
+  padding: 20rpx 20rpx 140rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

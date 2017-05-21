@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="card" wx:for="{{addrs}}">
+    <view class="flex-row space-between padding">
+      <text>{{item.name}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+    <view class="padding">{{item.address}}</view>
+    <view class="flex-row space-between padding">
+      <view class="flex-row v-center">
+        <checkbox checked="{{item.isDefault}}" color="#e4393c" data-id="{{item.id}}" bindtap="setDefault"/>
+        <text class="{{item.isDefault? 'color-red' : ''}}">默认地址</text>
+      </view>
+      <view class="flex-row v-center" data-id="{{item.id}}" bindtap="deleteAddr"><image src="../../img/delete.png" class="sm-img"></image>删除</view>
+    </view>
+  </view>
+
+  <button type="warn" class="bottom" bindtap="toAddr">添加新地址</button>
+</view>

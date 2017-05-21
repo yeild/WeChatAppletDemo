@@ -1,0 +1,39 @@
+.container{
+  padding: 0 20rpx;
+}
+.addr{
+  height: 80rpx;
+  border-top: 2px solid #f3f3f3;
+}
+.border-top{
+  border-top: 2px solid #f3f3f3;
+}
+.infoIcon{
+  margin-top: -5rpx;
+}
+.foodImg{
+  width: 200rpx;
+  height: 150rpx;
+}
+.padding{
+  padding: 20rpx;  
+}
+.list{
+  padding: 20rpx 10rpx;
+  border-top: 1px solid #f3f3f3;  
+}
+
+.payBtn{
+  margin-top: 20rpx;
+}
+.numBtn{
+  height: 48rpx;  
+}
+.padding-left{
+  padding-left: 20rpx
+}
+.fs-12{
+  font-size: 12px;
+  vertical-align: center;
+  line-height: 0;
+}

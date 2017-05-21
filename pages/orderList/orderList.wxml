@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header flex-row space-around">
+    <view class="tab {{nowtab== '全部订单' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='全部订单' >全部订单</view>
+    <view class="tab {{nowtab== '待付款' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待付款' >待付款</view>
+    <view class="tab {{nowtab== '待收货' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待收货' >待收货</view>
+  </view>
+
+  <view class="content" wx:for="{{orderList}}" wx:if="{{nowtab=='全部订单' || item.status==nowtab}}">
+    <view class="topContent flex-row v-center">
+      <view class="goodsImg"><image src="http://oi7z3yb8a.bkt.clouddn.com/tutou.jpg" class="full-img" mode="aspectFit"></image></view>
+      <view class="rightContent">
+        <view>{{item.goodsName}}</view>
+        <view>{{item.goodsNum}}件</view>
+      </view>
+    </view>
+    <view class="bottomContent flex-row space-between v-center">
+      <view>
+        <view>状态：<text class="color-red">{{item.status}}</text></view>
+        <view wx:if="{{item.status=='待付款'}}">合计：<text class="color-red">￥{{item.total}}</text></view>
+        <view wx:if="{{item.status=='待收货'}}">物流公司：<text class="color-red">{{item.logistics}}</text></view>
+      </view>
+      <button type="warn" size="mini" class="btn">去支付</button>
+    </view>
+  </view>
+</view>

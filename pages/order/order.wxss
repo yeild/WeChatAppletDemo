@@ -1,0 +1,38 @@
+.header{
+  width: 100%;
+  height: 400rpx;
+  background: radial-gradient(#0dafed,#0185d0);
+  border-bottom: 25rpx solid #f3f3f3;
+}
+.avatar{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 3px solid #66bbe9;
+}
+.nickname{
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  color: white;
+}
+.level{
+  color: white;
+  padding: 5rpx 40rpx;
+  border-radius: 20rpx;
+  background: rgba(0,0,0,0.4);
+  margin-top:-20rpx; 
+}
+.exp{
+  margin-top: 5rpx;
+  padding: 5rpx 80rpx;
+  background: rgba(0,0,0,0.6)
+}
+.content{
+  padding: 20rpx 0 20rpx 20rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.sm-img{
+  margin-right: 10rpx;
+}
