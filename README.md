@@ -1,8 +1,7 @@
-# WeChatAppletDemo
-微信小程序demo 
+# 微信小程序demo 
 [github地址](https://github.com/hlme/WeChatAppletDemo)
 
-去年小程序刚发布时赶潮流做了个demo，感觉还是比较简单的，遗憾的是很多API需要微信认证才能使用。
+去年小程序刚发布时特别火，赶潮流做了个demo。感觉小程序开发还是比较简单的，主要是官方文档写得比较好，遗憾的是很多API需要微信认证才能使用。
 
 ![demoImg1](http://ooqymz3vm.bkt.clouddn.com/demo1.png)
 ![demoImg2](http://ooqymz3vm.bkt.clouddn.com/demo2.png)
