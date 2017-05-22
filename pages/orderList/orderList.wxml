@@ -1,8 +1,8 @@
 <view class="container">
   <view class="header flex-row space-around">
-    <view class="tab {{nowtab== '全部订单' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='全部订单' >全部订单</view>
-    <view class="tab {{nowtab== '待付款' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待付款' >待付款</view>
-    <view class="tab {{nowtab== '待收货' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待收货' >待收货</view>
+    <view class="tab {{nowtab=='全部订单' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='全部订单' >全部订单</view>
+    <view class="tab {{nowtab=='待付款' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待付款' >待付款</view>
+    <view class="tab {{nowtab=='待收货' ? 'tabActive' : ''}}" bindtap="switchTabs" data-nowtab='待收货' >待收货</view>
   </view>
 
   <view class="content" wx:for="{{orderList}}" wx:if="{{nowtab=='全部订单' || item.status==nowtab}}">
