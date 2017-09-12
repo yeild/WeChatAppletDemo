@@ -1,5 +1,4 @@
 # 微信小程序demo 
-[github地址](https://github.com/yeild/WeChatAppletDemo)
 
 去年小程序刚发布时特别火，赶潮流做了个demo。感觉小程序开发还是比较简单的，主要是官方文档写得比较好，遗憾的是很多API需要微信认证才能使用。
 
