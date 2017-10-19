@@ -1,6 +1,6 @@
 # 微信小程序demo 
 
-去年小程序刚发布时特别火，赶潮流做了个demo。感觉小程序开发还是比较简单的，主要是官方文档写得比较好，遗憾的是很多API需要微信认证才能使用。
+一个简单的小程序项目，包含商品列表，商品详情，付款页面，收货地址，优惠券，订单列表等功能。
 
 ![demoImg1](http://ooqymz3vm.bkt.clouddn.com/demo1.png)
 ![demoImg2](http://ooqymz3vm.bkt.clouddn.com/demo2.png)
