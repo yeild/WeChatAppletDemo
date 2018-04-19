@@ -1,16 +1,15 @@
-
+var { apiUrl } = getApp()
 Page({
   data:{
     hasCoupon: false,
     coupons:[]
   },
-  onLoad:function(){
-    var that = this;
+  onLoad () {
     wx.request({
-      url: 'http://127.0.0.1:3000/couponList',
-      success: function(res) {
-        if (res.data.CouponList.length!=0){
-          that.setData({
+      url: `${apiUrl}/couponList`,
+      success: (res) => {
+        if (res.data.CouponList.length !=0 ){
+          this.setData({
             coupons: res.data.CouponList,
             hasCoupon: true
           })
@@ -18,7 +17,7 @@ Page({
       }
     })
   },
-  toIndex: function () {
+  toIndex () {
     wx.switchTab({
       url: '../index/index'
     })

@@ -65,7 +65,7 @@
 }
 .numBtn{
   height: 90%;  
-  padding: 2px 10px 0;
+  padding:0 10px;
 }
 .subBtn{
   border-right: 1px solid #999;

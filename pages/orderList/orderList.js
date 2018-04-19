@@ -20,12 +20,12 @@ Page({
     ],
     nowtab: '全部订单'
   },
-  onLoad:function(data){
+  onLoad (data) {
     this.setData({
       nowtab: data.toTab
     })
   },
-  switchTabs: function (el) {
+  switchTabs (el) {
     this.setData({
       nowtab: el.currentTarget.dataset.nowtab
     })

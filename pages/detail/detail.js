@@ -1,41 +1,42 @@
-var WxParse = require('../../wxParse/wxParse.js');
+var WxParse = require('../../wxParse/wxParse.js')
+var { apiUrl } = getApp()
 Page({
   data: {
     goods:{},
     goodsNum: 1,
-    typeIndex:0
+    typeIndex:0,
+    apiUrl
   },
-  onLoad: function (data) {
-    var that = this;
+  onLoad (data) {
     wx.request({
-      url: 'http://127.0.0.1:3000/detail?Id='+data.Id,
-      success: function(res) {
-        that.setData({
+      url: `${apiUrl}/goods/${data.Id}`,
+      success: (res) => {
+        this.setData({
           goods: res.data
         })
-        WxParse.wxParse('intro' , 'html', that.data.goods.Intro, that,10)
+        WxParse.wxParse('intro', 'html', this.data.goods.Intro.replace(/="/g, '="' + apiUrl), this, 10)
       }
     })
   },
-  checkType: function (el) {
+  checkType (el) {
     this.setData({
       typeIndex: el.target.dataset.id
     })
   },
-  sub: function () {
+  sub () {
     if(this.data.goodsNum == 1){
       return false
     }
     this.setData({
-      goodsNum : this.data.goodsNum - 1
+      goodsNum: this.data.goodsNum - 1
     })
   },
-  add: function () {
+  add () {
     this.setData({
-      goodsNum : this.data.goodsNum + 1
+      goodsNum: this.data.goodsNum + 1
     })
   },
-  toPay: function () {
+  toPay () {
     wx.navigateTo({
       url: '../pay/pay?goodsName=' + this.data.goods.Name + '&goodsType=' + this.data.goods.TypeList[this.data.typeIndex].Type + '&goodsPrice=' + this.data.goods.TypeList[this.data.typeIndex].PromotionPrice + '&goodsImg=' + this.data.goods.Pictures[0] + '&goodsNum=' + this.data.goodsNum
     })

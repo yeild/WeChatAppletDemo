@@ -1,7 +1,7 @@
 <view class="container">
   <view class="addr flex-row h-center v-center" wx-if="{{showInfo}}" bindtap="toAddr">
     <icon type="info" class="infoIcon"></icon>
-    <view>请填写收货地址</view>
+    <view style="margin-left:5px">请填写收货地址</view>
   </view>
 
   <view class="addr flex-row h-center v-center" wx-if="{{hasAddr}}">
@@ -15,7 +15,7 @@
   </view>
 
   <view class="flex-row padding border-top">
-    <image src="{{goods.Img}}" class="foodImg"></image>
+    <image src="{{apiUrl}}{{goods.Img}}" class="foodImg"></image>
     <view class="padding-left flex-col h-center">
       <view>{{goods.Name}}</view>
       <view>规格:{{goods.Type}}</view>
@@ -32,10 +32,10 @@
     </view>
   </view>
 
-  <view class="flex-row space-between list">
+  <view class="flex-row space-between list" style="height:22px">
     <text>优惠券</text>
     <text wx:if="{{!coupons}}">无</text>
-    <picker bindchange="useCounpon" range="{{coupons}}" range-key="text" wx:if="{{coupons}}">
+    <picker bindchange="useCounpon" style="margin-top:{{couponIndex?-20:0}}px" range="{{coupons}}" range-key="text" wx:if="{{coupons}}">
         <text wx:if="{{!couponIndex}}">请选择</text>
         <text wx:if="{{couponIndex}}">
           {{coupons[couponIndex].text}}

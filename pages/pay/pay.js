@@ -1,6 +1,7 @@
-
+var { apiUrl } = getApp()
 Page({
   data:{
+    apiUrl,
     showInfo: false,
     hasAddr: false,
     goods:{
@@ -22,8 +23,7 @@ Page({
     addrList: null,
     addrIndex: 0
   },
-  onLoad: function (data) {
-    var that = this;
+  onLoad (data) {
     this.setData({
       goods:{
         Name: data.goodsName,
@@ -37,8 +37,8 @@ Page({
       total: (data.goodsNum * data.goodsPrice + this.data.freight).toFixed(2)
     });
     wx.request({
-      url: 'http://127.0.0.1:3000/couponList',
-      success: function(res) {
+      url: `${apiUrl}/couponList`,
+      success: (res) => {
         if (res.data.CouponList.length!=0){
           var coupon = res.data.CouponList;
           coupon.forEach(function(item){
@@ -48,7 +48,7 @@ Page({
               item.text = item.Num + "折券"
             }
           })
-          that.setData({
+          this.setData({
             coupons: [{
                 Type:"cash",
                 Num: 0,
@@ -59,36 +59,35 @@ Page({
       }
     })
   },
-  onShow: function () {
-    var that = this;
+  onShow () {
     wx.request({
-      url: 'http://127.0.0.1:3000/addrList',
-      success: function (res) {
-        if (res.data.addrList.length == 0) {
+      url: `${apiUrl}/address`,
+      success: (res) => {
+        if (res.data.addressList.length === 0) {
           wx.showModal({
             title: '填写收货地址',
             content: '您还没有收货地址，是否现在创建？',
             confirmText: '创建',
-            success: function (res) {
+            success: (res) => {
               if (!res.confirm) {
-                that.setData({
+                this.setData({
                   showInfo: true
                 })
               } else {
-                that.toAddr();
+                this.toAddr()
               }
             }
           });
         } else {
-          that.setData({
-            addrList: res.data.addrList,
+          this.setData({
+            addrList: res.data.addressList,
             hasAddr: true
           })
         }
       }
     })
   },
-  sub: function () {
+  sub () {
     if(this.data.goodsNum == 1){
       return false
     }
@@ -97,13 +96,13 @@ Page({
     })
     this.getTotal();
   },
-  add: function () {
+  add () {
     this.setData({
       goodsNum : this.data.goodsNum + 1
     })
     this.getTotal();
   },
-  getTotal: function () {
+  getTotal () {
     this.setData({
       subtotal: (this.data.goodsPrice * this.data.goodsNum).toFixed(2)
     })
@@ -127,7 +126,7 @@ Page({
       }
     }
   },
-  useCounpon: function (el) {
+  useCounpon (el) {
     this.setData({
       couponIndex: el.detail.value
     });
@@ -146,12 +145,12 @@ Page({
       })
     }
   },
-  selectAddr: function (el) {
+  selectAddr (el) {
     this.setData({
       addrIndex: el.detail.value
     });
   },
-  toAddr: function () {
+  toAddr () {
     this.setData({
       showInfo: false
     })

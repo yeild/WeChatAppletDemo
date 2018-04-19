@@ -3,7 +3,7 @@
 <swiper indicator-dots class="header">
   <block wx:for="{{goods.Pictures}}">
     <swiper-item>
-      <image src="{{item}}" class="full-img" />
+      <image src="{{apiUrl}}{{item}}" class="full-img" />
     </swiper-item>
   </block>
 </swiper>

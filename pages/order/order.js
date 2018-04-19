@@ -1,31 +1,27 @@
-
 //获取应用实例
 var app = getApp()
 Page({
   data: {
     userInfo: {}
   },
-  onLoad: function () {
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
+  onLoad () {
+    app.getUserInfo((userInfo) => {
+      this.setData({
         userInfo:userInfo
       })
     })
   },
-  toAddr: function () {
+  toAddr () {
     wx.navigateTo({
       url: '../addrList/addrList'
     })
   },
-  toCoupon: function () {
+  toCoupon () {
     wx.navigateTo({
       url: '../coupon/coupon'
     })
   },
-  toOrderList: function (el) {
+  toOrderList (el) {
     wx.navigateTo({
       url: '../orderList/orderList?toTab='+el.target.dataset.totab
     })

@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="card" wx:for="{{addrs}}">
+  <view class="card" wx:for="{{address}}">
     <view class="flex-row space-between padding">
       <text>{{item.name}}</text>
       <text>{{item.phone}}</text>

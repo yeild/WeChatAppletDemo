@@ -10,7 +10,7 @@
 </view>
 <block wx:for="{{goodsList}}">
   <view class="content flex-row" bindtap="toDetail" data-id="{{item.Id}}">
-    <image src="{{item.ImgUrl}}" class="md-img margin-right" data-id="{{item.Id}}"></image>
+    <image src="{{apiUrl}}{{item.ImgUrl}}" class="md-img margin-right" data-id="{{item.Id}}"></image>
     <view class="flex-col" data-id="{{item.Id}}">
       <text data-id="{{item.Id}}">{{item.Name}}</text>
       <text class="color-red margin" data-id="{{item.Id}}">￥{{item.PromotionPrice}}</text>

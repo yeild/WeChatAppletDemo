@@ -1,46 +1,46 @@
-
+var { apiUrl } = getApp()
 Page({
   data: {
-    goodsList: []
+    goodsList: [],
+    apiUrl
   },
-  onLoad: function () {
-    var that = this;
+  onLoad () {
     wx.request({
-      url: 'http://127.0.0.1:3000/itemList',
-      success: function (res) {
-        that.setData({
-          goodsList: res.data.ItemList
+      url: `${apiUrl}/goods`,
+      success: (res) => {
+        this.setData({
+          goodsList: res.data.goods
         })
       }
     }) 
   },
-  toDetail: function (el) {
+  toDetail (el) {
     wx.navigateTo({
-      url: '../detail/detail?Id=' + el.target.dataset.id
+      url: `../detail/detail?Id=${el.target.dataset.id}`
     })
   },
-  getCoupon: function () {
+  getCoupon () {
     wx.request({
-      url: 'http://127.0.0.1:3000/getCoupon',
+      url: `${apiUrl}/getCoupon`,
       success: function (res) {
-        var title = '恭喜，领取成功', content = '';
+        var title = '恭喜，领取成功', content = ''
         switch (res.data.Type) {
           case "cash":
             content = '你获得了： 代金券 ￥' + res.data.Num + ' ，点击“订单-优惠券”查看'
-            break;
+            break
           case "discount":
             content = '你获得了： 折扣券 ' + res.data.Num + '折 ，点击“订单-优惠券”查看'
-            break;
+            break
           default:
-            title = null;
+            title = null
             content = res.data.Message
         }
-          wx.showModal({
-            title: title || '',
-            content: content,
-            showCancel: false
-          })  
-        }
+        wx.showModal({
+          title: title || '',
+          content: content,
+          showCancel: false
+        })  
+      }
     })
   }
 

@@ -1,4 +1,5 @@
-var city = require("../../utils/city.js");
+var city = require("../../utils/city.js")
+var { apiUrl } = getApp()
 Page({
   data:{
     address:{
@@ -11,41 +12,37 @@ Page({
       isDefault: false
     }
   },
-  onLoad:function(options){
-   var that = this;
-   city.init(that);
+  onLoad () {
+   city.init(this)
   },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  setName: function (el) {
+  setName (el) {
     this.setData({
       'address.name': el.detail.value
     })
   },
-  setTel: function (el) {
+  setTel (el) {
     this.setData({
       'address.phone': el.detail.value
     })
   },  
-  setDetail: function (el) {
+  setDetail (el) {
     this.setData({
       'address.address': el.detail.value
     })
   },
-  setDefalut: function () {
+  setDefalut () {
     this.setData({
       'address.isDefault': !this.data.address.isDefault
     })
   },
-  addAddr: function () {
+  addAddr () {
     this.setData({
       'address.province': this.data.city.selectedProvince,
       'address.city': this.data.city.selectedCity,
       'address.country': this.data.city.selectedDistrct
     })
-    var phone = this.data.address.phone;
-    var phoneReg = /^1[34578]\d{9}$/;
+    var phone = this.data.address.phone
+    var phoneReg = /^1[34578]\d{9}$/
     if(this.data.address.name==''){
       wx.showModal({
         content: '请输入收货人姓名',
@@ -81,13 +78,12 @@ Page({
       })
       return false
     }
-    var that = this;
 
     wx.request({
-      url: 'http://127.0.0.1:3000/addAddr',
+      url: `${apiUrl}/address`,
       method:'POST',
-      data: {addr: that.data.address}, 
-      success: function(res) {
+      data: {address: this.data.address}, 
+      success: (res) => {
         if(res.data.result){
           wx.showToast({
             title: '添加成功',
@@ -97,6 +93,6 @@ Page({
         }
       }
     })
-    wx.navigateBack();
+    wx.navigateBack()
   }
 })
