@@ -2,6 +2,6 @@
 ## 安装依赖包
 npm install
 
-## 启动服务器
-npm start
+## 启动服务
+node server
 
