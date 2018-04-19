@@ -5,12 +5,9 @@
 ![demoImg1](http://ooqymz3vm.bkt.clouddn.com/demo1.png)
 ![demoImg2](http://ooqymz3vm.bkt.clouddn.com/demo2.png)
 
-由于小程序包大小限制在1M以内，所以商品图片等资源放在了云上，另外用Nodejs+Express写了个简单的API服务器，数据较少所以没有用数据库。
-感兴趣的可以下载代码跑一下，服务器代码在server分支。
-
 ### 如何使用
-下载小程序源码及服务器源码，启动服务器后，在微信web开发者工具中选择“添加项目”，然后选择项目目录为下载的源码路径，打开即可看到效果。
-
+1. 切换到server分支后选择下载ZIP， 解压后 npm install 安装依赖, 然后node server 启动服务 
+2. 下载master分支源码，在[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)中选择“添加项目”，然后选择项目目录为源码的路径
 ### 演示：
 
 (第一张GIF图有点大，请耐心等待)
